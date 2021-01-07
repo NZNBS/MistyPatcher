@@ -1,0 +1,106 @@
+{
+  "project_info": {
+    "project_number": "37528087189",
+    "firebase_url": "https://mrzpatcher.firebaseio.com",
+    "project_id": "mrzpatcher",
+    "storage_bucket": "mrzpatcher.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:37528087189:android:833a6963108457fc5e099c",
+        "android_client_info": {
+          "package_name": "com.mreoz.mistypatcher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "37528087189-7lskhhn3i6bgp4igqubeevba8v4h39io.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mreoz.mistypatcher",
+            "certificate_hash": "80b4132dc7a831ad8bf2736a3d48804d07b1217d"
+          }
+        },
+        {
+          "client_id": "37528087189-7uhb3hq4dhqc3pc51glbk83j6i7l2pjt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBW8QdKQSjGQ_Ft5oHnIgGvTJmLH0R19q8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "37528087189-i1b2129do07ho2t8dc61gg1behfdqcvk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:37528087189:android:91f90cd3ca0a92955e099c",
+        "android_client_info": {
+          "package_name": "com.mreoz.mistypatcher2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "37528087189-7uhb3hq4dhqc3pc51glbk83j6i7l2pjt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBW8QdKQSjGQ_Ft5oHnIgGvTJmLH0R19q8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "37528087189-i1b2129do07ho2t8dc61gg1behfdqcvk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:37528087189:android:975a52a27c9debe65e099c",
+        "android_client_info": {
+          "package_name": "com.mreoz.mistypatcherCOD"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "37528087189-7uhb3hq4dhqc3pc51glbk83j6i7l2pjt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBW8QdKQSjGQ_Ft5oHnIgGvTJmLH0R19q8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "37528087189-i1b2129do07ho2t8dc61gg1behfdqcvk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

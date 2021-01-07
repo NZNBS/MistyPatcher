@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:orientation="vertical"
+        android:id="@+id/mrz_floater_container"
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/mrz_ficon"
+            android:layout_width="60.0dip"
+            android:layout_height="60.0dip"
+            android:layout_marginTop="8.0dip"
+            android:src="@drawable/ic_mfloat1" />
+
+        <TextView
+            android:layout_width="60.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70.0dip"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:freezesText="false"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:paddingLeft="12.0dip"
+            android:paddingRight="12.0dip"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="Block City Wars Patcher By MrEoZ - (MRZ)"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="#800000cd"
+            android:textSize="5dp"
+            android:textStyle="bold|italic" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/mrz_menu_container"
+        android:layout_width="300dp"
+        android:layout_height="330dp"
+        android:alpha="23.0"
+        android:background="#80000000"
+        android:orientation="vertical"
+        android:padding="5.0dip"
+        android:visibility="gone"
+        android:weightSum="1.0"
+        tools:ignore="WebViewLayout">
+
+        <WebView
+            android:id="@+id/mrz_webv"
+            android:layout_width="fill_parent"
+            android:layout_height="45.0dip"
+            android:layout_gravity="center" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="5.0dip"
+            android:background="@android:color/transparent" />
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="235dp"
+            android:scrollbarSize="10.0dip">
+
+            <LinearLayout
+                android:id="@id/patches"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical" />
+        </ScrollView>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/air"
+                    android:layout_marginTop="10dp"
+                    android:text="M   R   Z"
+                    android:gravity="center"/>
+            </LinearLayout>
+            <Button
+                android:id="@+id/mrz_mclose"
+                android:layout_width="100.0dip"
+                android:layout_height="70.0dip"
+                android:layout_gravity="center_vertical"
+                android:alpha="100"
+                android:text="Cerrar Menu"
+                android:textColor="@color/white"
+                android:textSize="10dp"
+                android:background="@drawable/botoes"/>
+            <Button
+                android:id="@+id/mrz_fclose"
+                android:layout_width="100.0dip"
+                android:layout_height="70.0dip"
+                android:layout_gravity="center_vertical"
+                android:alpha="100"
+                android:text="Deneter Patcher"
+                android:singleLine="true"
+                android:textSize="10dp"
+                android:textColor="@color/white"
+                android:background="@drawable/botoes"
+                android:layout_marginLeft="190dp"/>
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

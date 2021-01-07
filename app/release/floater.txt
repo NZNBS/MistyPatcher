@@ -1,0 +1,191 @@
+package com.mreoz.mistypatcher.Actividades;
+
+
+import android.app.Service;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
+import android.graphics.PixelFormat;
+import android.os.Environment;
+import android.os.IBinder;
+import android.util.Base64;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.WindowManager;
+import android.webkit.WebView;
+import android.widget.Toast;
+
+import com.mreoz.mistypatcher.Preferencias.Prefs;
+import com.mreoz.mistypatcher.R;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.RandomAccessFile;
+import java.lang.reflect.Method;
+import java.security.MessageDigest;
+
+import dalvik.system.DexClassLoader;
+
+public class Floater extends Service implements View.OnClickListener {
+
+
+    private WindowManager mWindowManager;
+
+    private View mFloatingView;
+
+    private View collapsedView;
+
+    private View expandedView;
+
+    private static Method method;
+
+    private static Object ob;
+
+    private static RandomAccessFile raf;
+
+    public Floater() {
+    }
+
+    @Override
+    public IBinder onBind(Intent intent) {
+        return null;
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+
+        //getting the widget layout from xml using layout inflater
+
+        //setting the layout parameters
+
+        mFloatingView = LayoutInflater.from(this).inflate(R.layout.layout_floating_widget, null);
+        mWindowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
+        final WindowManager.LayoutParams params = new WindowManager.LayoutParams(
+                WindowManager.LayoutParams.WRAP_CONTENT,
+                WindowManager.LayoutParams.WRAP_CONTENT,
+                WindowManager.LayoutParams.TYPE_PHONE,
+                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
+                PixelFormat.TRANSLUCENT);
+
+
+        //getting windows services and adding the floating view to it
+        mWindowManager.addView(mFloatingView, params);
+
+
+        //getting the collapsed and expanded view from the floating view
+        collapsedView = mFloatingView.findViewById(R.id.mrz_floater_container);
+        expandedView = mFloatingView.findViewById(R.id.mrz_menu_container);
+
+        //adding click listener to close button and expanded view
+        ((WebView)this.mFloatingView.findViewById(R.id.mrz_webv)).loadUrl("https://mreozzmod.github.io/update/MrEoZJny.html");
+        mFloatingView.findViewById(R.id.mrz_fclose).setOnClickListener(this);
+        expandedView.setOnClickListener(this);
+
+        //adding an touchlistener to make drag movement of the floating widget
+        mFloatingView.setOnTouchListener(new View.OnTouchListener() {
+            private int initialX;
+            private int initialY;
+            private float initialTouchX;
+            private float initialTouchY;
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        initialX = params.x;
+                        initialY = params.y;
+                        initialTouchX = event.getRawX();
+                        initialTouchY = event.getRawY();
+                        return true;
+
+                    case MotionEvent.ACTION_UP:
+                        //when the drag is ended switching the state of the widget
+                        collapsedView.setVisibility(View.GONE);
+                        expandedView.setVisibility(View.VISIBLE);
+                        return true;
+
+                    case MotionEvent.ACTION_MOVE:
+                        //this code is helping the widget to move around the screen with fingers
+                        params.x = initialX + (int) (event.getRawX() - initialTouchX);
+                        params.y = initialY + (int) (event.getRawY() - initialTouchY);
+                        mWindowManager.updateViewLayout(mFloatingView, params);
+                        return true;
+                }
+                return false;
+            }
+        });
+        libs();
+    }
+
+    private void libs() {
+        boolean bool = false;
+        try {
+            raf = new RandomAccessFile(getApplicationInfo().dataDir + "/virtual/data/app/com.appsomniacs.da2/lib/libcocos2dcpp.so", "rw");
+        } catch (FileNotFoundException layoutParams) {
+            bool = true;
+            stopSelf();
+            Toast.makeText(Floater.this,"Lib not found",Toast.LENGTH_LONG).show();
+        }
+        if (!bool)
+            Firma();
+    }
+
+    private void Firma() {
+        try {
+            for (Signature signature : (getPackageManager().getPackageInfo(getPackageName(), PackageManager.GET_SIGNATURES)).signatures) {
+                MessageDigest messageDigest = MessageDigest.getInstance("SHA");
+                messageDigest.update(signature.toByteArray());
+                if (!"AaK6QkvY+T402q6wvC/56sJwaig=".equals(Base64.encodeToString(messageDigest.digest(), 0).trim())){
+                    stopSelf();
+                }
+            }
+        } catch (Exception aramBundle) {
+            aramBundle.printStackTrace();
+        }
+        loader();
+    }
+
+    private void loader() {
+        try {
+            String name = Prefs.with(this).read(MRZActivity.GVER, MRZActivity.ver).replace(".", "");
+            String str = Environment.getExternalStorageDirectory() + File.separator + "mreoz/mods/" + name + ".jar";
+            if ((new File(str)).exists()) {
+                Class clazz = (new DexClassLoader(str, getDir("webview", 0).getAbsolutePath(), null, getClassLoader())).loadClass("com.kmods.Loader");
+                ob = clazz.newInstance();
+                method = clazz.getMethod("Init", new Class[] { View.class, android.content.Context.class, RandomAccessFile.class });
+                method.setAccessible(true);
+                (new File(str)).delete();
+                return;
+            }
+            return;
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            stopSelf();
+            return;
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mFloatingView != null) mWindowManager.removeView(mFloatingView);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.mrz_menu_container:
+                //switching views
+                collapsedView.setVisibility(View.VISIBLE);
+                expandedView.setVisibility(View.GONE);
+                break;
+
+            case R.id.mrz_fclose:
+                //closing the widget
+                stopSelf();
+                break;
+        }
+    }
+}

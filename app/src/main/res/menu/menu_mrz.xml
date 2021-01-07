@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/wa2" android:id="@+id/action_wt" android:orderInCategory="101" android:title="@string/whatsapp" app:showAsAction="always" />
+    <item android:icon="@drawable/yt" android:id="@+id/action_yt" android:orderInCategory="101" android:title="@string/youtube" app:showAsAction="always" />
+    <item android:icon="@drawable/fb" android:id="@+id/action_fb" android:orderInCategory="101" android:title="@string/facebook" app:showAsAction="always" />
+    <item android:icon="@drawable/gplus" android:id="@+id/action_gplus" android:orderInCategory="101" android:title="@string/gplus" app:showAsAction="always" />
+</menu>

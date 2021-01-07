@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#292828">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <include layout="@layout/toolbar" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        style="@android:style/Widget.ScrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:clipToPadding="true"
+        android:fillViewport="true"
+        android:scrollbarSize="15dp"
+        android:scrollbarStyle="outsideOverlay">
+
+        <LinearLayout
+            android:id="@+id/ch"
+            android:layout_marginTop="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:fontFamily="@font/ml"
+                android:freezesText="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:paddingLeft="5.0dip"
+                android:paddingRight="5.0dip"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="Consola para administradores para el libre control de MISTYPATCHER!"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/btn_login_register"
+                android:textSize="30sp"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/mistystatus"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:background="@drawable/botoes_ativados"
+                android:clickable="false"
+                android:text="MRZ TEAM"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:fontFamily="@font/ml"
+                android:freezesText="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:paddingLeft="12.0dip"
+                android:paddingRight="12.0dip"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="Solo para desarroladores de MODS - Coloca tu archivo archivo loader apk-release.apk en la carpeta Cryper!"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/btn_login_register"
+                android:textSize="16sp"
+                android:textStyle="bold|italic" />
+
+            <LinearLayout
+                android:id="@+id/modders"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/botoes"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/botoes"
+                    android:gravity="center"
+                    android:text="Encriptar mods"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_locate"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dip"
+                    android:background="@drawable/btns"
+                    android:text="Localizar archivo"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/btn_encrip"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dip"
+                    android:background="@drawable/btns"
+                    android:text="Encriptar"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/btn_sholoct"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dip"
+                    android:background="@drawable/btns"
+                    android:text="Testear"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/own"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="25dp"
+                android:visibility="gone"
+                android:background="@drawable/botoes"
+                android:orientation="vertical">
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="60dip"
+                    android:background="@drawable/botoes_ativados"
+                    android:clickable="false"
+                    android:text="Server"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/ml"
+                    android:freezesText="true"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:paddingLeft="12.0dip"
+                    android:paddingRight="12.0dip"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="Funcion solo habilitada para MRZTEAM OWNS"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/btn_login_register"
+                    android:textSize="16sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/botoes"
+                    android:gravity="center"
+                    android:text="Server online / offline"
+                    android:textAllCaps="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/botoes"
+                    android:layout_marginTop="25dp">
+
+                    <EditText
+                        android:id="@+id/reason"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Razon!"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/input_login_hint" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/onof"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dip"
+                    android:background="@drawable/btns"
+                    android:gravity="center"
+                    android:text="Apagar/encender"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/botoes"
+                    android:gravity="center"
+                    android:text="Server update"
+                    android:textAllCaps="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/botoes"
+                    android:layout_marginTop="25dp">
+
+                    <EditText
+                        android:id="@+id/ver"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Vercion"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/botoes"
+                    android:layout_marginTop="25dp">
+
+                    <EditText
+                        android:id="@+id/link"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Link"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/lnzupdt"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dip"
+                    android:background="@drawable/btns"
+                    android:text="Lanzar actualizacion"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="25dp"
+                android:id="@+id/vendedores"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/botoes"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="60dip"
+                    android:background="@drawable/botoes_ativados"
+                    android:clickable="false"
+                    android:text="Users store"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/ml"
+                    android:freezesText="true"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:paddingLeft="12.0dip"
+                    android:paddingRight="12.0dip"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="Funcion solo habilitada para vendedores oficiales! - Cada cambio de cuenta queda registrado con su nombre de usuario en nuestro servidor"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/btn_login_register"
+                    android:textSize="16sp"
+                    android:textStyle="bold|italic" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/botoes"
+                    android:layout_marginTop="25dp">
+
+                    <EditText
+                        android:id="@+id/idclient"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Coloca la ID del cliente"
+                        android:imeOptions="actionNext"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/searhclient"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dip"
+                    android:background="@drawable/btns"
+                    android:text="Buscar"
+                    android:textColor="@color/white" />
+
+                <LinearLayout
+                    android:id="@+id/tablaids"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/botoes"
+                        android:gravity="center"
+                        android:text="Username:"
+                        android:textAllCaps="true"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/nameclient"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/botoes"
+                        android:gravity="center"
+                        android:text="Name"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/botoes"
+                        android:gravity="center"
+                        android:text="Correo:"
+                        android:textAllCaps="true"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/clientmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/botoes"
+                        android:gravity="center"
+                        android:text="Mail"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/botoes"
+                        android:gravity="center"
+                        android:text="Tipo de cuenta:"
+                        android:textAllCaps="true"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/clientstatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/botoes"
+                        android:gravity="center"
+                        android:text="Estado"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/botoes"
+                        android:gravity="center"
+                        android:text="Actualizar a:"
+                        android:textAllCaps="true"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/clientupdte"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/botoes"
+                        android:gravity="center"
+                        android:text="Nada"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+
+                    <SeekBar
+                        android:id="@+id/conta"
+                        style="@android:style/Widget.DeviceDefault.SeekBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="5dp"
+                        android:indeterminate="false"
+                        android:max="3"
+                        android:progress="0" />
+                    <Button
+                        android:id="@+id/updclient"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dip"
+                        android:background="@color/common_google_signin_btn_text_dark_disabled"
+                        android:text="Actualizar Cliente"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

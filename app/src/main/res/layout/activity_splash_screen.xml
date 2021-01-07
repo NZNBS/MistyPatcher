@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/relative"
+    android:background="@drawable/background"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        android:id="@+id/imageViewSplash"
+        android:layout_width="100.0dip"
+        android:layout_height="100.0dip"
+        android:src="@drawable/ic_mfloat1"
+        android:layout_marginBottom="26.0dip"
+
+        android:layout_above="@+id/txtAppName"
+        android:layout_centerHorizontal="true" />
+
+    <com.hanks.htextview.line.LineTextView
+        android:id="@+id/txtAppName"
+        app:animationDuration="3000"
+        app:lineColor="#1367bc"
+        app:lineWidth="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/txtDeveloper"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="198.0dip"
+        android:gravity="right"
+        android:lineSpacingExtra="8sp"
+        android:paddingRight="10dp"
+        android:text="MisTyPatcher"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30.0sp"
+        android:textStyle="bold"
+        android:typeface="sans" />
+    <com.hanks.htextview.scale.ScaleTextView
+        android:textSize="16.0sp"
+        android:textColor="@color/opaque_black"
+        android:id="@+id/txtDeveloper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10.0dip"
+        android:text="Youtube.com/MrEoZ"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>
